@@ -1,10 +1,10 @@
-# 🛡️ Rede Segura
+# TrustLens
 
-### Think Before You Click. Stay Safe Online.
+### See the signs. Stay protected.
 
-**Rede Segura** is a Windows cybersecurity application designed to help users identify potential online scams through local message analysis, contextual risk detection, and clear safety recommendations.
+**TrustLens** is a privacy-focused cybersecurity application that helps users identify suspicious messages and links through local analysis, clear risk assessments, and practical safety recommendations.
 
-The project also includes an informational website where users can learn about the application and download the Windows installer.
+The project also includes an informational website in Portuguese where users can learn about the application and download the Windows installer.
 
 > **Project Status:** Active Development  
 > **Platform:** Windows  
@@ -17,7 +17,7 @@ The project also includes an informational website where users can learn about t
 
 Online scams are becoming increasingly sophisticated. Fraudulent messages often impersonate trusted organizations, create artificial urgency, request sensitive information, or pressure victims into making unexpected payments.
 
-Rede Segura aims to make scam awareness more accessible by helping users recognize these warning signs before taking action.
+TrustLens aims to make scam awareness more accessible by helping users recognize these warning signs before taking action.
 
 Instead of simply searching for suspicious keywords, the application evaluates several indicators and their context to produce an understandable risk assessment.
 
@@ -40,7 +40,7 @@ Instead of simply searching for suspicious keywords, the application evaluates s
 
 ### 🧠 Context-Aware Risk Detection
 
-Rede Segura goes beyond individual keywords by examining how suspicious elements appear together.
+TrustLens goes beyond individual keywords by examining how suspicious elements appear together.
 
 For example:
 
@@ -83,7 +83,7 @@ The checker uses a partial local list of common public suffixes and brand names.
 
 ### 🚦 Risk Classification
 
-Rede Segura provides four possible results:
+TrustLens provides four possible results:
 
 | Risk Level | Description |
 |---|---|
@@ -119,7 +119,7 @@ User privacy is a core design priority.
 
 ## 🖥️ Windows Application
 
-Rede Segura includes a native Windows desktop application built using **C# and Windows Forms**.
+TrustLens includes a native Windows desktop application built using **C# and Windows Forms**.
 
 The application provides an interface for entering suspicious messages, running an analysis, and reviewing the results.
 
@@ -151,7 +151,7 @@ The project includes a website developed with **HTML5 and CSS3**.
 
 Its purpose is to:
 
-- Introduce Rede Segura.
+- Introduce TrustLens.
 - Explain the application's purpose.
 - Provide installation instructions.
 - Explain privacy and safety considerations.
@@ -183,15 +183,17 @@ The current detection engine is based on **custom rules and contextual heuristic
 ## 📁 Project Structure
 
 ```text
-Rede-Segura/
+project-root/
 │
 ├── index.html
 ├── styles.css
+├── site.js
 │
 ├── images/
 │   └── icon.svg
 │
-├── rede-segura-app.cs
+├── trustlens-app.cs
+├── trustlens-assembly-info.cs
 ├── app-shell-controls.cs
 ├── analysis-result-section.cs
 ├── security-content-controls.cs
@@ -201,8 +203,8 @@ Rede-Segura/
 ├── scam-analysis.cs
 ├── windows-installer.cs
 │
-├── RedeSegura.exe
-├── RedeSegura-Setup.exe
+├── TrustLens.exe
+├── TrustLens-Setup.exe
 │
 ├── build-windows-installer.ps1
 ├── install-windows.ps1
@@ -212,7 +214,7 @@ Rede-Segura/
 ├── tests/
 │   ├── scam-analyzer-tests.cs
 │   ├── url-structure-analyzer-tests.cs
-│   └── rede-segura-ui-tests.cs
+│   └── trustlens-ui-tests.cs
 ├── servidor-local.ps1
 ├── testar-no-pc.bat
 │
@@ -227,10 +229,10 @@ The structure shown above represents the project's documented layout. Some suppo
 
 ### Option 1 — Windows Installer
 
-1. Download `RedeSegura-Setup.exe` from the project website or the published repository files.
+1. Download `TrustLens-Setup.exe` from the project website or the published repository files.
 2. Open the installer on a Windows computer.
 3. Follow the installation instructions.
-4. Launch Rede Segura from the installed shortcut.
+4. Launch TrustLens from the installed shortcut.
 5. Enter a message to begin analyzing potential scam indicators.
 
 **The installer is intended for Windows devices.**
@@ -244,15 +246,19 @@ git clone https://github.com/DavidPereiraDev/Rede-segura.git
 cd Rede-segura
 ```
 
+The repository is still hosted at its current GitHub address; update this clone URL and directory after the repository owner confirms the rename to `TrustLens`.
+
 On a compatible Windows environment, run:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\build-windows-installer.ps1
 ```
 
-This script is intended to build the Windows application and installer.
+This script builds `TrustLens.exe` and packages it with the Windows installer `TrustLens-Setup.exe`. After both new files have been built successfully, it removes the obsolete root-level `RedeSegura.exe` and `RedeSegura-Setup.exe` files.
 
 Compilation requires the appropriate Windows C# compiler and supporting environment.
+
+The installer updates the standard legacy installation in `%LOCALAPPDATA%\Programs\Rede Segura` in place, refreshes its shortcuts, and removes the old executable after success. New installations use `%LOCALAPPDATA%\Programs\TrustLens`. If both standard folders exist, installation stops instead of guessing which copy to replace. Custom installation paths are preserved when explicitly supplied to the install script.
 
 ---
 
@@ -337,7 +343,7 @@ Tests also examine input handling, normalization, and extracted evidence.
 
 ## 🔐 Security and Privacy
 
-Rede Segura is designed around local processing.
+TrustLens is designed around local processing.
 
 The analysis engine does not require transmitting submitted messages to a remote service.
 
@@ -394,13 +400,13 @@ When in doubt, contact the organization using an official website, app, or phone
 
 ## 🎯 Project Vision
 
-Rede Segura was created with one mission:
+TrustLens was created with one mission:
 
 **Make digital safety simpler and more accessible.**
 
 The project aims to help everyday users recognize suspicious communication and understand the warning signs commonly associated with online scams.
 
-By combining accessible design, local message analysis, and clear explanations, Rede Segura seeks to encourage safer decisions in an increasingly connected world.
+By combining accessible design, local message analysis, and clear explanations, TrustLens seeks to encourage safer decisions in an increasingly connected world.
 
 ---
 
@@ -418,10 +424,10 @@ Developer interested in software engineering, cybersecurity, artificial intellig
 
 ## ⚠️ Disclaimer
 
-Rede Segura is an educational and informational cybersecurity tool.
+TrustLens is an educational and informational cybersecurity tool.
 
 It cannot guarantee that a message is legitimate or fraudulent and should not replace independent verification or professional cybersecurity solutions.
 
 ---
 
-### 🛡️ Rede Segura — Think Before You Click.
+### TrustLens — See the signs. Stay protected.

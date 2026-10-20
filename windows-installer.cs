@@ -8,7 +8,7 @@ internal static class WindowsInstaller
 {
     private static readonly string[] Files =
     {
-        "RedeSegura.exe",
+        "TrustLens.exe",
         "install-windows.ps1",
     };
 
@@ -22,7 +22,7 @@ internal static class WindowsInstaller
 
         string stagingDirectory = Path.Combine(
             Path.GetTempPath(),
-            "RedeSegura-" + Guid.NewGuid().ToString("N"));
+            "TrustLens-" + Guid.NewGuid().ToString("N"));
 
         try
         {
@@ -33,7 +33,7 @@ internal static class WindowsInstaller
         catch (Exception error)
         {
             MessageBox.Show(
-                "Não foi possível preparar a instalação da Rede Segura.\r\n\r\n" + error.Message,
+                "Não foi possível preparar a instalação da TrustLens.\r\n\r\n" + error.Message,
                 "Erro de instalação",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
@@ -62,7 +62,7 @@ internal static class WindowsInstaller
         Assembly assembly = Assembly.GetExecutingAssembly();
         foreach (string file in Files)
         {
-            if (assembly.GetManifestResourceStream("RedeSegura." + file) == null)
+            if (assembly.GetManifestResourceStream("TrustLens." + file) == null)
             {
                 return 1;
             }
@@ -75,7 +75,7 @@ internal static class WindowsInstaller
         Assembly assembly = Assembly.GetExecutingAssembly();
         foreach (string file in Files)
         {
-            using (Stream resource = assembly.GetManifestResourceStream("RedeSegura." + file))
+            using (Stream resource = assembly.GetManifestResourceStream("TrustLens." + file))
             {
                 if (resource == null)
                 {

@@ -4,7 +4,7 @@ $root = $PSScriptRoot
 $compiler = Join-Path $env:WINDIR "Microsoft.NET\Framework64\v4.0.30319\csc.exe"
 $testRunnerSource = Join-Path $root "tests\url-structure-analyzer-tests.cs"
 $analyzerSource = Join-Path $root "url-structure-analysis.cs"
-$temporaryDirectory = Join-Path ([System.IO.Path]::GetTempPath()) ("RedeSeguraUrlTests-" + [guid]::NewGuid().ToString("N"))
+$temporaryDirectory = Join-Path ([System.IO.Path]::GetTempPath()) ("TrustLensUrlTests-" + [guid]::NewGuid().ToString("N"))
 $testRunnerPath = Join-Path $temporaryDirectory "url-structure-analyzer-tests.exe"
 
 if (-not (Test-Path -LiteralPath $compiler -PathType Leaf)) {

@@ -22,13 +22,13 @@ try {
   try {
     $client.Connect("localhost", 8765)
     $existingApp = Invoke-WebRequest -Uri $url -UseBasicParsing -TimeoutSec 3
-    if ($existingApp.StatusCode -ne 200 -or $existingApp.Content -notmatch '<h2 id="install-title">Instale a Rede Segura</h2>') {
+    if ($existingApp.StatusCode -ne 200 -or $existingApp.Content -notmatch '<h2 id="download-title">Descarregar TrustLens</h2>') {
       throw "A porta 8765 já está a ser utilizada por outra aplicação."
     }
     Start-Process -FilePath $edgePath -ArgumentList @("--app=$url", "--no-first-run", "--no-default-browser-check")
     exit 0
   } catch {
-    Write-Host "Nao foi possivel abrir a aplicacao Rede Segura: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "Nao foi possivel abrir a aplicacao TrustLens: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
   } finally {
     $client.Dispose()
@@ -38,10 +38,12 @@ try {
 $mimeTypes = @{
   ".html" = "text/html; charset=utf-8"
   ".css" = "text/css; charset=utf-8"
+  ".js" = "text/javascript; charset=utf-8"
+  ".png" = "image/png"
   ".svg" = "image/svg+xml"
 }
 
-Write-Host "Rede Segura disponivel em $url"
+Write-Host "TrustLens disponivel em $url"
 Start-Process -FilePath $edgePath -ArgumentList @("--app=$url", "--no-first-run", "--no-default-browser-check")
 
 try {

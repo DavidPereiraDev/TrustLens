@@ -81,12 +81,12 @@ internal sealed class SidebarControl : UserControl
             Location = new Point(0, 13),
             Size = new Size(52, 52),
             SizeMode = PictureBoxSizeMode.Zoom,
-            AccessibleName = "Logótipo Rede Segura"
+            AccessibleName = "Logótipo TrustLens"
         };
         brandName = new Label
         {
             AutoSize = true,
-            Text = "Rede Segura",
+            Text = "TrustLens",
             Location = new Point(62, 15),
             Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold),
             ForeColor = Color.White,

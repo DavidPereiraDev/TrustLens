@@ -2,10 +2,10 @@ $ErrorActionPreference = "Stop"
 
 $root = $PSScriptRoot
 $compiler = Join-Path $env:WINDIR "Microsoft.NET\Framework64\v4.0.30319\csc.exe"
-$temporaryDirectory = Join-Path ([System.IO.Path]::GetTempPath()) ("RedeSeguraUiTests-" + [guid]::NewGuid().ToString("N"))
-$testRunnerPath = Join-Path $temporaryDirectory "rede-segura-ui-tests.exe"
+$temporaryDirectory = Join-Path ([System.IO.Path]::GetTempPath()) ("TrustLensUiTests-" + [guid]::NewGuid().ToString("N"))
+$testRunnerPath = Join-Path $temporaryDirectory "trustlens-ui-tests.exe"
 $sources = @(
-  (Join-Path $root "rede-segura-app.cs")
+  (Join-Path $root "trustlens-app.cs")
   (Join-Path $root "app-shell-controls.cs")
   (Join-Path $root "analysis-result-section.cs")
   (Join-Path $root "security-content-controls.cs")
@@ -13,7 +13,7 @@ $sources = @(
   (Join-Path $root "link-checker-control.cs")
   (Join-Path $root "settings-about-controls.cs")
   (Join-Path $root "scam-analysis.cs")
-  (Join-Path $root "tests\rede-segura-ui-tests.cs")
+  (Join-Path $root "tests\trustlens-ui-tests.cs")
 )
 
 if (-not (Test-Path -LiteralPath $compiler -PathType Leaf)) {
@@ -25,7 +25,7 @@ try {
   $arguments = @(
     "/nologo"
     "/target:exe"
-    "/main:RedeSeguraUiTests"
+    "/main:TrustLensUiTests"
     "/reference:System.Windows.Forms.dll"
     "/reference:System.Drawing.dll"
     "/out:$testRunnerPath"

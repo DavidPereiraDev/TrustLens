@@ -2,16 +2,23 @@ $ErrorActionPreference = "Stop"
 
 $root = $PSScriptRoot
 $compiler = Join-Path $env:WINDIR "Microsoft.NET\Framework64\v4.0.30319\csc.exe"
-$outputPath = Join-Path $root "RedeSegura-Setup.exe"
-$appOutputPath = Join-Path $root "RedeSegura.exe"
-$appSourcePath = Join-Path $root "rede-segura-app.cs"
+$outputPath = Join-Path $root "TrustLens-Setup.exe"
+$appOutputPath = Join-Path $root "TrustLens.exe"
+$appSourcePath = Join-Path $root "trustlens-app.cs"
+$assemblyInfoPath = Join-Path $root "trustlens-assembly-info.cs"
 $files = @(
-  "RedeSegura.exe",
+  "TrustLens.exe",
   "install-windows.ps1"
 )
 
 if (-not (Test-Path -LiteralPath $compiler)) {
   throw "Não foi encontrado o compilador C# necessário para criar o instalador."
+}
+
+$runningProcesses = @(Get-Process -Name "RedeSegura", "RedeSegura-Setup", "TrustLens", "TrustLens-Setup" -ErrorAction SilentlyContinue)
+if ($runningProcesses.Count -gt 0) {
+  $processDetails = ($runningProcesses | ForEach-Object { "$($_.ProcessName) (PID $($_.Id))" }) -join ", "
+  throw "Feche a aplicação ou o instalador antes de compilar: $processDetails"
 }
 
 $appArguments = @(
@@ -20,6 +27,7 @@ $appArguments = @(
   "/reference:System.Windows.Forms.dll"
   "/reference:System.Drawing.dll"
   "/out:$appOutputPath"
+  $assemblyInfoPath
   $appSourcePath
   (Join-Path $root "app-shell-controls.cs")
   (Join-Path $root "analysis-result-section.cs")
@@ -31,7 +39,7 @@ $appArguments = @(
 )
 & $compiler $appArguments
 if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $appOutputPath -PathType Leaf)) {
-  throw "Não foi possível criar a aplicação Windows RedeSegura.exe."
+  throw "Não foi possível criar a aplicação Windows TrustLens.exe."
 }
 
 $arguments = @(
@@ -39,6 +47,7 @@ $arguments = @(
   "/target:winexe"
   "/reference:System.Windows.Forms.dll"
   "/out:$outputPath"
+  $assemblyInfoPath
 )
 
 foreach ($file in $files) {
@@ -46,13 +55,20 @@ foreach ($file in $files) {
   if (-not (Test-Path -LiteralPath $sourcePath -PathType Leaf)) {
     throw "Ficheiro necessário para o instalador não encontrado: $sourcePath"
   }
-  $arguments += "-resource:$sourcePath,RedeSegura.$file"
+  $arguments += "-resource:$sourcePath,TrustLens.$file"
 }
 
 $arguments += Join-Path $root "windows-installer.cs"
 & $compiler $arguments
 if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $outputPath -PathType Leaf)) {
-  throw "Não foi possível criar o instalador RedeSegura-Setup.exe."
+  throw "Não foi possível criar o instalador TrustLens-Setup.exe."
 }
 
 Write-Output "Instalador criado: $outputPath"
+
+foreach ($legacyFile in @("RedeSegura.exe", "RedeSegura-Setup.exe")) {
+  $legacyPath = Join-Path $root $legacyFile
+  if (Test-Path -LiteralPath $legacyPath -PathType Leaf) {
+    Remove-Item -LiteralPath $legacyPath -Force
+  }
+}

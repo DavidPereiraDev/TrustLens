@@ -331,8 +331,8 @@ internal sealed class AboutControl : SecurityContentPage
 {
     public AboutControl()
     {
-        AccessibleName = "Sobre a Rede Segura";
-        AddCard("Rede Segura", new[]
+        AccessibleName = "Sobre a TrustLens";
+        AddCard("TrustLens", new[]
         {
             new[] { "Objetivo", "Apoiar a identificação de sinais de risco em mensagens e endereços, com explicações e recomendações claras." },
             new[] { "Como funciona", "A análise de mensagens é baseada em regras locais e indicadores contextuais. Não é uma verificação definitiva nem substitui a confirmação através de canais oficiais." }

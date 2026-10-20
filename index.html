@@ -3,110 +3,308 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f7f2">
-  <meta name="description" content="Conheça a Rede Segura, saiba como instalar a app e encontre ajuda para a utilizar.">
+  <meta name="theme-color" content="#071b17">
+  <meta name="description" content="Conheça a TrustLens, veja a aplicação Windows em funcionamento e descarregue-a gratuitamente. Análise local e privada de mensagens e links.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TrustLens">
+  <meta property="og:title" content="TrustLens — See the signs. Stay protected.">
+  <meta property="og:description" content="A TrustLens ajuda a identificar mensagens e links suspeitos com análise local, avaliações claras e recomendações práticas.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="TrustLens — See the signs. Stay protected.">
+  <meta name="twitter:description" content="Análise local e privada de mensagens e links suspeitos para Windows.">
   <link rel="icon" href="./images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./images/icon.svg">
-  <title>Rede Segura — informações e instalação</title>
+  <title>TrustLens — See the signs. Stay protected.</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="./index.html" aria-label="Rede Segura, página inicial">\
-      <span class="brand-mark" aria-hidden="true">R</span>
-      <span>Rede Segura</span>
+    <a class="brand" href="#inicio" aria-label="TrustLens, início">
+      <img src="./images/icon.svg" alt="" width="36" height="36">
+      <span>TrustLens</span>
     </a>
-    <span class="header-note">Proteção contra burlas online</span>
-    <a class="install-button install-download" href="./RedeSegura-Setup.exe" download>Instalar app</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+      <span class="menu-toggle-label">Menu</span>
+      <span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span></span>
+    </button>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <a href="#funcionalidades">Funcionalidades</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#criterios">Critérios</a>
+      <a href="#privacidade">Privacidade</a>
+      <a href="#instalacao">Instalação</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+    <a class="button button-small button-primary header-download" href="./TrustLens-Setup.exe" download>
+      <span aria-hidden="true">↓</span> Descarregar
+    </a>
   </header>
 
-  <main>
-    <section class="intro presentation" aria-labelledby="page-title">
-      <p class="eyebrow">Proteção simples contra burlas</p>
-      <h1 id="page-title">Pare. Confirme. Navegue em segurança.</h1>
-      <p class="intro-copy">A aplicação Rede Segura ajuda a identificar sinais comuns de burla em SMS, emails e outras mensagens. A análise é feita na aplicação Windows, diretamente neste dispositivo; este site serve apenas para informar e descarregar a app.</p>
+  <main id="inicio">
+    <section class="hero section-wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> See the signs. Stay protected.</p>
+        <h1 id="hero-title">Identifique sinais de burla <span>antes de agir.</span></h1>
+        <p class="hero-description">A TrustLens ajuda a identificar indícios de fraude em mensagens e links suspeitos, com análise local, avaliações claras e recomendações práticas diretamente no seu computador.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="./TrustLens-Setup.exe" download>
+            <span aria-hidden="true">↓</span> Descarregar para Windows
+          </a>
+          <a class="button button-outline" href="#como-funciona">
+            <span aria-hidden="true">→</span> Como funciona
+          </a>
+        </div>
+        <ul class="trust-points" aria-label="Princípios da TrustLens">
+          <li><span aria-hidden="true">⌂</span> Análise local</li>
+          <li><span aria-hidden="true">◉</span> Sem histórico</li>
+          <li><span aria-hidden="true">◇</span> Privacidade</li>
+          <li><span aria-hidden="true">文</span> Interface em português</li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <div class="device-glow" aria-hidden="true"></div>
+        <div class="laptop">
+          <div class="laptop-camera" aria-hidden="true"></div>
+          <div class="laptop-screen">
+            <img
+              src="./images/app-analyzer-high-risk.png"
+              alt="Captura real da TrustLens para Windows: analisador de mensagens com sinais de alto risco e recomendações."
+              width="1365"
+              height="767"
+              fetchpriority="high">
+          </div>
+          <div class="laptop-base" aria-hidden="true"><span></span></div>
+        </div>
+        <p class="visual-caption"><span class="status-dot" aria-hidden="true"></span> Aplicação Windows · análise no dispositivo</p>
+      </div>
     </section>
 
-    <section class="install-guide card" id="instalar" aria-labelledby="install-title">
-      <div class="section-heading">
-        <span class="step-number" aria-hidden="true">↓</span>
+    <section class="section-wrap gallery-section" id="capturas" aria-labelledby="gallery-title">
+      <div class="section-heading section-heading-row">
         <div>
-          <h2 id="install-title">Instale a Rede Segura</h2>
-          <p>Instale a aplicação no seu computador Windows.</p>
+          <p class="eyebrow">Veja a aplicação</p>
+          <h2 id="gallery-title">Capturas da aplicação</h2>
+          <p class="section-intro">Ecrãs reais da versão Windows da TrustLens.</p>
+        </div>
+        <div class="gallery-controls" aria-label="Controlos da galeria">
+          <button class="icon-button gallery-scroll-back" type="button" aria-label="Deslocar galeria para trás">←</button>
+          <button class="icon-button gallery-scroll-forward" type="button" aria-label="Deslocar galeria para a frente">→</button>
         </div>
       </div>
-      <p>Descarregue o instalador .exe no botão no topo desta página. Quando o download terminar, abra o ficheiro e siga os passos apresentados pelo instalador.</p>
-      <ol class="install-steps">
-        <li>Carregue em <strong>Instalar app</strong> no topo desta página.</li>
-        <li>Abra o ficheiro <strong>RedeSegura-Setup.exe</strong> quando o download terminar.</li>
-        <li>Depois da instalação, abra a Rede Segura pelo atalho com a logo criado no Ambiente de Trabalho ou no menu Iniciar. Abre como uma aplicação Windows e não precisa do Chrome nem de abrir um site.</li>
+      <div class="gallery-track" id="gallery-track" tabindex="0" aria-label="Galeria de capturas. Use as setas para percorrer.">
+        <figure class="gallery-card">
+          <button class="gallery-open" type="button" data-gallery-index="0" aria-label="Ampliar: Analisador de mensagens — risco alto">
+            <img src="./images/app-analyzer-high-risk.png" alt="Analisador de mensagens com resultado de alto risco." width="1365" height="767" loading="lazy">
+            <span class="zoom-indicator" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><strong>Analisador de mensagens</strong><span>Exemplo de resultado com sinais de risco elevado</span></figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <button class="gallery-open" type="button" data-gallery-index="1" aria-label="Ampliar: Verificação de links">
+            <img src="./images/app-link-checker.png" alt="Ecrã real da funcionalidade Verificar links." width="1362" height="755" loading="lazy">
+            <span class="zoom-indicator" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><strong>Verificação de links</strong><span>Análise estrutural local de endereços</span></figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <button class="gallery-open" type="button" data-gallery-index="2" aria-label="Ampliar: Resultado de baixo risco aparente">
+            <img src="./images/app-analyzer-low-risk.png" alt="Analisador de mensagens com a classificação baixo risco aparente." width="1365" height="767" loading="lazy">
+            <span class="zoom-indicator" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><strong>Baixo risco aparente</strong><span>Um resultado sem sinais não garante legitimidade</span></figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <button class="gallery-open" type="button" data-gallery-index="3" aria-label="Ampliar: Secção Aprender">
+            <img src="./images/app-learning.png" alt="Ecrã real da secção Aprender, com informação sobre phishing e burlas por SMS." width="1365" height="739" loading="lazy">
+            <span class="zoom-indicator" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><strong>Aprender</strong><span>Sinais comuns e formas de prevenção</span></figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <button class="gallery-open" type="button" data-gallery-index="4" aria-label="Ampliar: Guia de segurança">
+            <img src="./images/app-safety-guide.png" alt="Ecrã real do Guia de segurança da TrustLens." width="1365" height="766" loading="lazy">
+            <span class="zoom-indicator" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><strong>Guia de segurança</strong><span>Passos prudentes para situações do dia a dia</span></figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <button class="gallery-open" type="button" data-gallery-index="5" aria-label="Ampliar: Definições">
+            <img src="./images/app-settings.png" alt="Ecrã real das definições de aparência e privacidade." width="1365" height="755" loading="lazy">
+            <span class="zoom-indicator" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><strong>Definições</strong><span>Preferência de tema válida durante a sessão</span></figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <button class="gallery-open" type="button" data-gallery-index="6" aria-label="Ampliar: Sobre a TrustLens">
+            <img src="./images/app-about.png" alt="Ecrã real Sobre a TrustLens, com informação da aplicação e da análise local." width="1362" height="766" loading="lazy">
+            <span class="zoom-indicator" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><strong>Sobre a TrustLens</strong><span>Objetivo, privacidade e limites</span></figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <button class="gallery-open" type="button" data-gallery-index="7" aria-label="Ampliar: Analisador pronto para analisar">
+            <img src="./images/app-analyzer-ready.png" alt="Ecrã real do analisador de mensagens antes de iniciar uma análise." width="1365" height="741" loading="lazy">
+            <span class="zoom-indicator" aria-hidden="true">↗</span>
+          </button>
+          <figcaption><strong>Analisador pronto</strong><span>Entrada de mensagem e resultado inicial</span></figcaption>
+        </figure>
+      </div>
+      <p class="gallery-hint">Selecione uma captura para a ampliar. Na imagem ampliada, use as setas do teclado para navegar e Esc para fechar.</p>
+    </section>
+
+    <section class="section-wrap content-section" id="funcionalidades" aria-labelledby="features-title">
+      <div class="section-heading">
+        <p class="eyebrow">Ferramentas úteis para navegar com mais segurança</p>
+        <h2 id="features-title">Principais funcionalidades</h2>
+        <p class="section-intro">Uma aplicação Windows focada em análise local, explicações compreensíveis e recomendações práticas.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon" aria-hidden="true">⌕</span><h3>Análise de mensagens</h3><p>Procura sinais comuns em SMS, emails e outras mensagens de texto.</p></article>
+        <article class="feature-card"><span class="feature-icon" aria-hidden="true">↗</span><h3>Verificação de links</h3><p>Examina características do endereço sem o abrir nem contactar o site.</p></article>
+        <article class="feature-card"><span class="feature-icon" aria-hidden="true">◇</span><h3>Explicações claras</h3><p>Mostra os sinais identificados e o contexto considerado na avaliação.</p></article>
+        <article class="feature-card"><span class="feature-icon" aria-hidden="true">✓</span><h3>Recomendações práticas</h3><p>Sugere formas prudentes de confirmar mensagens antes de agir.</p></article>
+        <article class="feature-card"><span class="feature-icon" aria-hidden="true">▣</span><h3>Interface moderna</h3><p>Navegação por secções, exemplos e temas claro e escuro durante a sessão.</p></article>
+        <article class="feature-card"><span class="feature-icon" aria-hidden="true">⌑</span><h3>Privacidade primeiro</h3><p>A análise acontece no computador; não existe histórico de mensagens.</p></article>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section how-section" id="como-funciona" aria-labelledby="how-title">
+      <div class="section-heading">
+        <p class="eyebrow">Uma análise explicável, passo a passo</p>
+        <h2 id="how-title">Como funciona?</h2>
+        <p class="section-intro">A aplicação analisa a mensagem no próprio dispositivo e apresenta os sinais encontrados, sem substituir a confirmação por canais oficiais.</p>
+      </div>
+      <ol class="process-grid">
+        <li class="process-card"><span class="process-number">01</span><span class="process-icon" aria-hidden="true">▤</span><h3>Introdução</h3><p>Cole ou escreva a mensagem recebida na aplicação.</p></li>
+        <li class="process-card"><span class="process-number">02</span><span class="process-icon" aria-hidden="true">⌑</span><h3>Preparação</h3><p>Evite incluir palavras-passe, códigos ou dados bancários.</p></li>
+        <li class="process-card"><span class="process-number">03</span><span class="process-icon" aria-hidden="true">⌕</span><h3>Identificação de sinais</h3><p>Regras locais procuram pedidos e padrões relevantes no texto.</p></li>
+        <li class="process-card"><span class="process-number">04</span><span class="process-icon" aria-hidden="true">◉</span><h3>Avaliação</h3><p>Os sinais são avaliados com o contexto e as suas combinações.</p></li>
+        <li class="process-card"><span class="process-number">05</span><span class="process-icon" aria-hidden="true">◈</span><h3>Classificação</h3><p>O resultado é heurístico: baixo, moderado, alto ou inconclusivo.</p></li>
+        <li class="process-card"><span class="process-number">06</span><span class="process-icon" aria-hidden="true">✓</span><h3>Recomendações</h3><p>Consulte as explicações e confirme qualquer pedido importante.</p></li>
       </ol>
-      <p class="install-note">O instalador é para Windows. O navegador pode pedir confirmação antes de abrir um ficheiro .exe descarregado.</p>
     </section>
 
-    <section class="presentation-details" aria-label="Informações sobre a aplicação">
-      <article class="presentation-card">
-        <span class="presentation-icon" aria-hidden="true">⌕</span>
-        <h2>O que faz</h2>
-        <p>Procura sinais de urgência, pedidos de pagamento, links suspeitos e solicitações de dados pessoais.</p>
-      </article>
-      <article class="presentation-card">
-        <span class="presentation-icon" aria-hidden="true">🔒</span>
-        <h2>A sua privacidade</h2>
-        <p>O texto analisado fica neste dispositivo: não é enviado nem guardado pela aplicação.</p>
-      </article>
-      <article class="presentation-card">
-        <span class="presentation-icon" aria-hidden="true">✓</span>
-        <h2>Como ajuda</h2>
-        <p>Explica os sinais encontrados e sugere formas seguras de confirmar a mensagem antes de agir.</p>
-      </article>
-    </section>
-
-    <section class="install-guide card" id="utilizacao" aria-labelledby="usage-title">
-      <div class="section-heading">
-        <span class="step-number" aria-hidden="true">1</span>
-        <div>
-          <h2 id="usage-title">Como utilizar</h2>
-          <p>Três passos simples para analisar uma mensagem.</p>
+    <section class="section-wrap content-section criteria-layout" id="criterios" aria-labelledby="criteria-title">
+      <div class="criteria-main">
+        <div class="section-heading">
+          <p class="eyebrow">Regras locais, sem pontuações de eficácia</p>
+          <h2 id="criteria-title">Como avaliamos as mensagens?</h2>
+          <p class="section-intro">O analisador procura indicadores no texto e considera relações entre eles. Um indicador isolado não confirma uma burla.</p>
+        </div>
+        <div class="criteria-grid">
+          <article class="criterion-card"><span class="criterion-symbol" aria-hidden="true">!</span><div><h3>Informação sensível</h3><p>Pedidos acionáveis de palavras-passe, códigos de autenticação, PIN, CVV e dados pessoais ou bancários.</p></div></article>
+          <article class="criterion-card"><span class="criterion-symbol" aria-hidden="true">◷</span><div><h3>Urgência e pressão</h3><p>Ameaças de bloqueio ou cancelamento, prazos imediatos e tentativas de impedir verificações.</p></div></article>
+          <article class="criterion-card"><span class="criterion-symbol" aria-hidden="true">€</span><div><h3>Pedidos de pagamento</h3><p>Pedidos de transferência, dinheiro ou taxas, incluindo quando associados a uma condição.</p></div></article>
+          <article class="criterion-card"><span class="criterion-symbol" aria-hidden="true">▧</span><div><h3>Identidade alegada</h3><p>Afirmações de representar uma entidade podem ganhar relevância quando combinadas com pedidos sensíveis.</p></div></article>
+          <article class="criterion-card"><span class="criterion-symbol" aria-hidden="true">↗</span><div><h3>Links suspeitos</h3><p>URLs encurtados, endereços IP, domínios potencialmente imitadores ou com estrutura invulgar.</p></div></article>
+          <article class="criterion-card"><span class="criterion-symbol" aria-hidden="true">◇</span><div><h3>Contexto e combinação</h3><p>Promessas de prémio, alegações de entrega e combinações entre pedidos, pressão e links são avaliadas no contexto textual.</p></div></article>
         </div>
       </div>
-      <ol class="install-steps">
-        <li>Na aplicação, cole ou escreva a mensagem que recebeu. Não inclua palavras-passe, códigos de confirmação ou dados bancários.</li>
-        <li>Toque em <strong>Analisar mensagem</strong> para ver os sinais detetados e recomendações.</li>
-        <li>Confirme sempre mensagens importantes por um canal oficial. Um resultado sem sinais não garante que a mensagem seja legítima.</li>
-      </ol>
+      <aside class="risk-panel" aria-labelledby="risk-title">
+        <h2 id="risk-title">Classificação de risco</h2>
+        <p>As categorias refletem regras heurísticas, não probabilidades.</p>
+        <ul class="risk-list">
+          <li><span class="risk-dot risk-low"></span><span><strong>Baixo risco aparente</strong><small>Não foram detetados sinais comuns; não garante legitimidade.</small></span></li>
+          <li><span class="risk-dot risk-moderate"></span><span><strong>Risco moderado</strong><small>Há sinais ou pedidos que merecem confirmação.</small></span></li>
+          <li><span class="risk-dot risk-high"></span><span><strong>Alto risco</strong><small>Foram encontrados vários sinais relevantes combinados.</small></span></li>
+          <li><span class="risk-dot risk-unknown"></span><span><strong>Inconclusivo</strong><small>Falta contexto suficiente para classificar com confiança.</small></span></li>
+        </ul>
+        <p class="risk-caveat">Nenhum resultado garante que uma mensagem seja segura ou fraudulenta. Confirme sempre por um canal independente.</p>
+      </aside>
     </section>
 
-    <section class="install-guide card" id="sobre" aria-labelledby="about-title">
-      <div class="section-heading">
-        <span class="step-number step-number-soft" aria-hidden="true">2</span>
-        <div>
-          <h2 id="about-title">Quem somos</h2>
-          <p>Sobre a Rede Segura.</p>
-        </div>
+    <section class="section-wrap privacy-section" id="privacidade" aria-labelledby="privacy-title">
+      <div class="privacy-icon" aria-hidden="true">⌑</div>
+      <div>
+        <p class="eyebrow">Os seus dados ficam consigo</p>
+        <h2 id="privacy-title">Privacidade por princípio.</h2>
+        <p>A análise de mensagens e links é local. A aplicação não mantém histórico, não guarda os conteúdos analisados e não os envia para servidores externos. Não existem contas nem início de sessão.</p>
       </div>
-      <p>A Rede Segura é uma aplicação educativa criada para ajudar as pessoas a reconhecer sinais comuns de burla digital e a fazer uma pausa antes de responder a mensagens suspeitas.</p>
-      <p class="install-note">A análise é automática e baseada em padrões comuns. Não substitui a confirmação junto da entidade mencionada, do banco ou das autoridades.</p>
+      <ul class="privacy-checks">
+        <li><span aria-hidden="true">✓</span> Sem histórico de análises</li>
+        <li><span aria-hidden="true">✓</span> Sem guardar mensagens ou links</li>
+        <li><span aria-hidden="true">✓</span> Sem envio de conteúdo para servidores</li>
+        <li><span aria-hidden="true">✓</span> Sem conta nem login</li>
+      </ul>
     </section>
 
-    <section class="install-guide card" id="ajuda" aria-labelledby="help-title">
-      <div class="section-heading">
-        <span class="step-number step-number-soft" aria-hidden="true">3</span>
-        <div>
-          <h2 id="help-title">Ajuda e suporte</h2>
-          <p>Respostas para utilizar a aplicação em segurança.</p>
+    <section class="section-wrap download-section" id="instalacao" aria-labelledby="download-title">
+      <div class="download-copy">
+        <p class="eyebrow">Disponível para Windows</p>
+        <h2 id="download-title">Descarregar TrustLens</h2>
+        <p>Instale a aplicação no seu computador para analisar mensagens localmente e consultar recomendações de segurança.</p>
+        <div class="download-facts">
+          <span><strong>Ficheiro</strong> TrustLens-Setup.exe</span>
+          <span><strong>Tamanho</strong> 158 208 bytes (154,5 KiB)</span>
+          <span><strong>Requisito confirmado</strong> Windows</span>
         </div>
+        <a class="button button-primary download-cta" href="./TrustLens-Setup.exe" download>
+          <span aria-hidden="true">↓</span> Descarregar instalador
+        </a>
+        <p class="download-version-note">Não é apresentada uma versão: os metadados do ficheiro não identificam uma versão publicável.</p>
       </div>
-      <h3>O download não começa?</h3>
-      <p>Confirme que está a utilizar o Windows e tente carregar novamente em <strong>Instalar app (.exe)</strong>. Depois de descarregado, abra o ficheiro RedeSegura-Setup.exe. O Windows pode apresentar um aviso porque o instalador não tem assinatura digital.</p>
-      <h3>Já partilhou dados ou fez um pagamento?</h3>
-      <p>Contacte imediatamente o seu banco através da app oficial ou do número no seu cartão. Se partilhou uma palavra-passe, altere-a no site oficial e nos outros serviços onde a reutilizou. Peça ajuda a alguém de confiança.</p>
-      <p class="install-note">Para dúvidas sobre a utilização, consulte as instruções desta página. Não foi indicado um contacto de suporte direto para a aplicação.</p>
+      <div class="install-card">
+        <h3>Instalação em três passos</h3>
+        <ol>
+          <li><span>1</span><p>Descarregue <strong>TrustLens-Setup.exe</strong>.</p></li>
+          <li><span>2</span><p>Abra o ficheiro e siga as instruções do instalador.</p></li>
+          <li><span>3</span><p>Inicie a app pelo atalho criado no Ambiente de Trabalho ou no menu Iniciar.</p></li>
+        </ol>
+        <div class="hash-box">
+          <div><span class="hash-label">Integridade · SHA-256</span><code id="installer-hash">06562A21921936F30A0B21368BE4360EF714110634DDC772BBB842D93346A4F3</code></div>
+          <button class="copy-hash" type="button" aria-label="Copiar hash SHA-256">Copiar</button>
+        </div>
+        <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="section-wrap faq-section content-section" id="faq" aria-labelledby="faq-title">
+      <div class="section-heading">
+        <p class="eyebrow">Ajuda prática</p>
+        <h2 id="faq-title">Perguntas frequentes</h2>
+      </div>
+      <div class="faq-list">
+        <details><summary>O que faz a TrustLens?</summary><p>É uma aplicação educativa para Windows que analisa localmente mensagens e a estrutura de links, apresenta sinais encontrados e sugere formas prudentes de confirmar pedidos.</p></details>
+        <details><summary>A aplicação envia ou guarda as minhas mensagens?</summary><p>Não. A análise é feita no dispositivo. A aplicação não mantém histórico nem persiste ou envia os conteúdos analisados para serviços externos.</p></details>
+        <details><summary>Um resultado de baixo risco significa que a mensagem é segura?</summary><p>Não. A análise baseia-se em regras e padrões comuns e pode não detetar uma burla. Confirme mensagens importantes através de um contacto ou aplicação oficial que já conheça.</p></details>
+        <details><summary>A TrustLens abre ou verifica o site de um link?</summary><p>Não. O analisador examina características estruturais do endereço localmente. Não abre o URL, não consulta DNS nem contacta o site.</p></details>
+        <details><summary>Como instalo a aplicação?</summary><p>Descarregue o instalador para Windows, abra o ficheiro e siga as instruções apresentadas. Depois, utilize o atalho criado no Ambiente de Trabalho ou no menu Iniciar.</p></details>
+        <details><summary>Posso utilizar a aplicação no telemóvel?</summary><p>Não. O instalador disponibilizado é para computadores Windows. Este website é informativo e não analisa mensagens.</p></details>
+      </div>
+    </section>
+
+    <section class="section-wrap about-section" id="sobre" aria-labelledby="about-title">
+      <div class="about-mark" aria-hidden="true"><img src="./images/icon.svg" alt="" width="48" height="48"></div>
+      <div>
+        <p class="eyebrow">Sobre o projeto</p>
+        <h2 id="about-title">TrustLens</h2>
+        <p>Projeto de David Pereira. See the signs. Stay protected. A TrustLens ajuda a reconhecer sinais comuns de burla digital e incentiva uma pausa antes de responder a mensagens suspeitas.</p>
+        <a class="text-link" href="https://github.com/DavidPereiraDev/Rede-Segura" target="_blank" rel="noopener noreferrer">Ver o projeto no GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="about-disclaimer">Ferramenta educativa. A análise é automática, heurística e pode não detetar todos os tipos de burla.</p>
     </section>
   </main>
 
-  <footer>
-    <p>Rede Segura é uma ferramenta educativa. A análise é automática e pode não detetar todos os tipos de burla.</p>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#inicio"><img src="./images/icon.svg" alt="" width="28" height="28"><span>TrustLens</span></a>
+    <p>See the signs. Stay protected.</p>
+    <a href="#privacidade">Privacidade</a>
+    <span>© TrustLens</span>
   </footer>
+
+  <dialog class="lightbox" aria-label="Captura ampliada">
+    <div class="lightbox-bar">
+      <p class="lightbox-caption"></p>
+      <button class="icon-button lightbox-close" type="button" aria-label="Fechar imagem ampliada">×</button>
+    </div>
+    <div class="lightbox-image-wrap">
+      <button class="icon-button lightbox-previous" type="button" aria-label="Imagem anterior">←</button>
+      <img class="lightbox-image" src="" alt="">
+      <button class="icon-button lightbox-next" type="button" aria-label="Imagem seguinte">→</button>
+    </div>
+    <p class="lightbox-help">Use ← e → para navegar · Esc para fechar</p>
+  </dialog>
 </body>
 </html>
