@@ -1,6 +1,6 @@
-# TrustLens
+# 🛡️ TrustLens
 
-### See the signs. Stay protected.
+### 🛡️ See the signs. Stay protected.
 
 **TrustLens** is a privacy-focused cybersecurity application that helps users identify suspicious messages and links through local analysis, clear risk assessments, and practical safety recommendations.
 
@@ -125,7 +125,7 @@ The application provides an interface for entering suspicious messages, running 
 
 The project separates the user interface from the analysis engine, making the code easier to maintain, test, and extend.
 
-### Windows Application Highlights
+### 🖥️ Windows Application Highlights
 
 - Native desktop experience.
 - Single-window sidebar navigation and contextual section header.
@@ -227,7 +227,7 @@ The structure shown above represents the project's documented layout. Some suppo
 
 ## 🚀 Installation
 
-### Option 1 — Windows Installer
+### 📦 Option 1 — Windows Installer
 
 1. Download `TrustLens-Setup.exe` from the project website or the published repository files.
 2. Open the installer on a Windows computer.
@@ -237,16 +237,14 @@ The structure shown above represents the project's documented layout. Some suppo
 
 **The installer is intended for Windows devices.**
 
-### Option 2 — Build from Source
+### 💻 Option 2 — Build from Source
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/DavidPereiraDev/Rede-segura.git
-cd Rede-segura
+git clone https://github.com/DavidPereiraDev/TrustLens.git
+cd TrustLens
 ```
-
-The repository is still hosted at its current GitHub address; update this clone URL and directory after the repository owner confirms the rename to `TrustLens`.
 
 On a compatible Windows environment, run:
 
@@ -266,13 +264,13 @@ The installer updates the standard legacy installation in `%LOCALAPPDATA%\Progra
 
 The analysis process is divided into several stages.
 
-### 1. Input Processing
+### 1. 📥 Input Processing
 
 The submitted message is normalized and prepared for analysis.
 
 This includes handling text variations, Unicode characters, and relevant message elements while retaining references to the original text.
 
-### 2. Signal Detection
+### 2. 🔍 Signal Detection
 
 The engine searches for indicators related to:
 
@@ -284,7 +282,7 @@ The engine searches for indicators related to:
 - Reward and prize claims.
 - Suspicious URLs.
 
-### 3. Contextual Evaluation
+### 3. 🧩 Contextual Evaluation
 
 The engine examines combinations of indicators.
 
@@ -292,7 +290,7 @@ For example, a payment request associated with a condition to unlock or continue
 
 Contextual evaluation also helps avoid treating every mention of money, passwords, or security as suspicious.
 
-### 4. Weighted Risk Scoring
+### 4. 📊 Weighted Risk Scoring
 
 Different indicators contribute different weights to the assessment.
 
@@ -302,7 +300,7 @@ The resulting score is used alongside contextual rules to determine the risk cla
 
 **The score is not a statistical probability of fraud.**
 
-### 5. Result Generation
+### 5. 📝 Result Generation
 
 The application returns an assessment containing the risk level, supporting evidence, and safety guidance.
 
@@ -365,7 +363,7 @@ When in doubt, contact the organization using an official website, app, or phone
 
 ## 🗺️ Roadmap
 
-### Detection Engine
+### 🔍 Detection Engine
 
 - [ ] Expand contextual analysis rules.
 - [ ] Improve detection of new scam patterns.
@@ -374,7 +372,7 @@ When in doubt, contact the organization using an official website, app, or phone
 - [ ] Evaluate the analyzer against an independent dataset.
 - [ ] Explore additional languages.
 
-### Windows Application
+### 🖥️ Windows Application
 
 - [ ] Continue improving the user experience.
 - [ ] Expand compatibility testing.
@@ -382,14 +380,14 @@ When in doubt, contact the organization using an official website, app, or phone
 - [ ] Refine result visualization.
 - [ ] Improve installation reliability.
 
-### Website
+### 🌐 Website
 
 - [ ] Improve the visual design.
 - [ ] Refine responsive layouts.
 - [ ] Add application screenshots.
 - [ ] Improve installation documentation.
 
-### Development
+### 🧰 Development
 
 - [ ] Expand automated regression tests.
 - [ ] Improve technical documentation.
@@ -416,8 +414,6 @@ By combining accessible design, local message analysis, and clear explanations, 
 
 Developer interested in software engineering, cybersecurity, artificial intelligence, and building practical digital products.
 
-
-
 **GitHub:** [@DavidPereiraDev](https://github.com/DavidPereiraDev)
 
 ---
@@ -430,4 +426,4 @@ It cannot guarantee that a message is legitimate or fraudulent and should not re
 
 ---
 
-### TrustLens — See the signs. Stay protected.
+### 🛡️ TrustLens — See the signs. Stay protected.
